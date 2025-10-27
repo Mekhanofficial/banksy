@@ -6,6 +6,8 @@ const CURRENCY = "₦"; // Currency symbol
 const customerAccounts = [
   { accountId: 1001, accountHolder: "Ruky Ogunjimi", balance: 500.0, type: "Savings" },
   { accountId: 1002, accountHolder: "John Bello", balance: 1200.0, type: "Checking" },
+  { accountId: 1003, accountHolder: "Amaka Udo", balance: 2000.0, type: "Savings" },
+  { accountId: 1004, accountHolder: "Tunde Afolabi", balance: 750.0, type: "Checking" },
 ];
 
 // CORE FUNCTIONS //
@@ -80,6 +82,8 @@ console.log(`Welcome to ${BANK_NAME}`);
 console.log("INITIAL BALANCES");
 checkBalance(1001);
 checkBalance(1002);
+checkBalance(1003);
+checkBalance(1004);
 
 console.log("DEPOSIT ");
 deposit(1001, 250); // Deposit ₦250 into Ruky's account
@@ -93,6 +97,8 @@ withdraw(1002, 5000); // Try to withdraw too much from John
 console.log(" FINAL BALANCES ");
 checkBalance(1001);
 checkBalance(1002);
+checkBalance(1003);
+checkBalance(1004);
 
 console.log(" SCOPE TEST ");
 try {
