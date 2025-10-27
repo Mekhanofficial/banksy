@@ -4,17 +4,37 @@ const CURRENCY = "₦"; // Currency symbol
 
 // ACCOUNT DATA STRUCTURE
 const customerAccounts = [
-  { accountId: 1001, accountHolder: "Ruky Ogunjimi", balance: 500.0, type: "Savings" },
-  { accountId: 1002, accountHolder: "Emeka Bello", balance: 1200.0, type: "Checking" },
-  { accountId: 1003, accountHolder: "Amaka Udo", balance: 2000.0, type: "Savings" },
-  { accountId: 1004, accountHolder: "Tunde Afolabi", balance: 750.0, type: "Checking" },
+  {
+    accountId: 1001,
+    accountHolder: "Ruky Ogunjimi",
+    balance: 500.0,
+    type: "Savings",
+  },
+  {
+    accountId: 1002,
+    accountHolder: "Emeka Bello",
+    balance: 1200.0,
+    type: "Checking",
+  },
+  {
+    accountId: 1003,
+    accountHolder: "Amaka Udo",
+    balance: 2000.0,
+    type: "Savings",
+  },
+  {
+    accountId: 1004,
+    accountHolder: "Tunde Afolabi",
+    balance: 750.0,
+    type: "Checking",
+  },
 ];
 
 // CORE FUNCTIONS //
 
 // Find account by ID
 function findAccount(accountId) {
-  return customerAccounts.find(acc => acc.accountId === accountId) || null;
+  return customerAccounts.find((acc) => acc.accountId === accountId) || null;
 }
 
 // Check balance
@@ -24,7 +44,11 @@ function checkBalance(accountId) {
     console.log(`Account ${accountId} not found.`);
     return;
   }
-  console.log(`${account.accountHolder}'s balance is ${CURRENCY}${account.balance.toFixed(2)}`);
+  console.log(
+    `${account.accountHolder}'s balance is ${CURRENCY}${account.balance.toFixed(
+      2
+    )}`
+  );
 }
 
 // Deposit funds
@@ -40,7 +64,11 @@ function deposit(accountId, amount) {
   }
 
   account.balance += amount;
-  console.log(`[${BANK_NAME}] Deposit of ${CURRENCY}${amount.toFixed(2)} successful for ${account.accountHolder}.`);
+  console.log(
+    `[${BANK_NAME}] Deposit of ${CURRENCY}${amount.toFixed(2)} successful for ${
+      account.accountHolder
+    }.`
+  );
   console.log(`New balance: ${CURRENCY}${account.balance.toFixed(2)}`);
 }
 
@@ -64,14 +92,18 @@ function withdraw(accountId, amount) {
     console.log(
       `Insufficient funds! Tried to withdraw ${CURRENCY}${amount.toFixed(
         2
-      )} + fee ${CURRENCY}${fee.toFixed(2)} but only has ${CURRENCY}${account.balance.toFixed(2)}.`
+      )} + fee ${CURRENCY}${fee.toFixed(
+        2
+      )} but only has ${CURRENCY}${account.balance.toFixed(2)}.`
     );
   } else {
     account.balance -= total;
     console.log(
-      `Withdrawal of ${CURRENCY}${amount.toFixed(2)} (Fee: ${CURRENCY}${fee.toFixed(
+      `Withdrawal of ${CURRENCY}${amount.toFixed(
         2
-      )}) successful for ${account.accountHolder}.`
+      )} (Fee: ${CURRENCY}${fee.toFixed(2)}) successful for ${
+        account.accountHolder
+      }.`
     );
     console.log(`New balance: ${CURRENCY}${account.balance.toFixed(2)}`);
   }
@@ -104,5 +136,7 @@ console.log(" SCOPE TEST ");
 try {
   console.log(FEE_RATE);
 } catch (error) {
-  console.log("Cannot access FEE_RATE outside withdraw() — it is locally scoped only.");
+  console.log(
+    "Cannot access FEE_RATE outside withdraw() — it is locally scoped only."
+  );
 }
