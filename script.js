@@ -5,7 +5,7 @@ const CURRENCY = "₦"; // Currency symbol
 // ACCOUNT DATA STRUCTURE
 const customerAccounts = [
   { accountId: 1001, accountHolder: "Ruky Ogunjimi", balance: 500.0, type: "Savings" },
-  { accountId: 1002, accountHolder: "John Bello", balance: 1200.0, type: "Checking" },
+  { accountId: 1002, accountHolder: "Emeka Bello", balance: 1200.0, type: "Checking" },
   { accountId: 1003, accountHolder: "Amaka Udo", balance: 2000.0, type: "Savings" },
   { accountId: 1004, accountHolder: "Tunde Afolabi", balance: 750.0, type: "Checking" },
 ];
@@ -92,7 +92,7 @@ console.log("WITHDRAWAL (SUCCESS) ");
 withdraw(1001, 100); // Withdraw ₦100 from Ruky
 
 console.log("WITHDRAWAL (FAILURE) ");
-withdraw(1002, 5000); // Try to withdraw too much from John
+withdraw(1002, 5000); // Try to withdraw too much from Emeka
 
 console.log(" FINAL BALANCES ");
 checkBalance(1001);
